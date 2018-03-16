@@ -1,0 +1,49 @@
+﻿@model  IEnumerable<OisisCarRental.Models.Car>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Showing all Vehicles</h2>
+
+            <div class="row">
+@foreach (var item in Model)
+{
+                <div class="col-lg-4">
+
+                    <div class="bootcards-list">
+                        <div class="panel panel-default">
+                            <div class="list-group">
+                                <a class="list-group-item" href="#">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <img src="data:image;base64,@System.Convert.ToBase64String(item.CarPhoto)" width="140" height="120" alt="..." class="pull-left"/> 
+                                            <!-- <i class="fa fa-3x fa-building-o "></i>-->
+                                            <h4 class="list-group-item-heading"><span class="alert-success">Model</span> :@item.CarBrand.Name</h4>
+                                            <p class="list-group-item-text"><i class="glyphicon glyphicon-tags"></i> :@item.Model_Name</p>
+                                            <p class="list-group-item-text"><i class="glyphicon glyphicon-tags"></i> :@item.Price</p>
+                                            <p class="list-group-item-text"><i class="glyphicon glyphicon-tags"></i> :@item.Number_Seat</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                           <i class="glyphicon glyphicon-tags"></i> <p class="list-group-item-text"> @item.FuelType.Name</p>
+                                            <i class="glyphicon glyphicon-tags"></i> <p class="list-group-item-text"> @item.CarType.Name</p>
+                                            <i class="glyphicon glyphicon-tags"></i><p class="list-group-item-text"> @item.Location</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+}
+            </div>
+
+
+        
+
+
+
+  
+
+
+

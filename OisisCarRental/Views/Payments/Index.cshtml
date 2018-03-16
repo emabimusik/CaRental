@@ -1,0 +1,39 @@
+﻿@model  IEnumerable<OisisCarRental.Models.Payment>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Booking</h2>
+
+
+<table class="table table-bordered">
+
+
+
+    <thead>
+        <tr>
+            <th> @Html.DisplayNameFor(model => model.Amount) </th>
+            <th> @Html.DisplayNameFor(model => model.PayMethod) </th>
+            <th> @Html.DisplayNameFor(model => model.PayStatus) </th>
+            <th> @Html.DisplayNameFor(model => model.PayedOn) </th>
+            <th> Carte </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.Amount</td>
+                <td>@item.PayMetId</td>
+                <td>@item.PayStaId</td>
+                <td>@item.PayedOn</td>
+             
+                <td>@Html.ActionLink(" ", "Create", "Payments", null, new { @class = "fa fa-credit-card " }) </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+

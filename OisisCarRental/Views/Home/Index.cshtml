@@ -1,0 +1,135 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+       
+        <div class='container'>
+            <div class="row">
+                <router-outlet></router-outlet>
+            </div>
+            <div class="row">
+                <!-- Boxes de Acoes -->
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon">
+                            <div class="image"><i class="fa fa-calendar"></i></div>
+                            <div class="info">
+                                <h3 class="title">SHOW ALL CARS</h3>
+                                <p>
+                                    We simplified car rentals, so you can focus on what's important to you.
+                                </p>
+                                <div class="more">
+                                    @Html.ActionLink("CARS", "Index", "Cars" )                                 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space"></div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon">
+                            <div class="image"><i class="fa fa-truck"></i></div>
+                            <div class="info">
+                                <h3 class="title">Add Car To the CarList</h3>
+                                <p>
+                                   List of  all cars at one place. You can add Car to the list with all the Details.
+                                </p>
+                                <div class="more">
+                                    @Html.ActionLink("ADD A CAR", "Create", "Cars")
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space"></div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon">
+                            <div class="image"><i class="fa fa-flag"></i></div>
+                            <div class="info">
+                                <h3 class="title">ALL PENDING BOOKING DETAILS</h3>
+                                <p>
+                                    See all Pending booking at once place , so you can focus on what's important to you.
+                                </p>
+                                <div class="more">
+                                    @Html.ActionLink("Payment Detail", "Index", "Payments")
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space"></div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon">
+                            <div class="image"><i class="fa fa-desktop"></i></div>
+                            <div class="info">
+                              
+                                    <h3 class="title">BOOK NOW</h3>
+                                    <p>
+                                        We simplified car rentals, so you can focus on what's important to you.
+                                    </p>
+                                    <div class="more">
+                                        @Html.ActionLink("BOOK A CAR", "Create", "Bookings")
+                                    </div>
+                                </div>
+
+                         
+                        </div>
+                        <div class="space"></div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon">
+                            <div class="image"><i class="fa fa-desktop"></i></div>
+                            
+                                <div class="info">
+                                    <h3 class="title">BOOK NOW</h3>
+                                    <p>
+                                        We simplified car rentals, so you can focus on what's important to you.
+                                    </p>
+                                    <div class="more">
+                                        @Html.ActionLink("BOOK A CAR", "Index", "Bookings")
+                                    </div>
+                              
+                            </div>
+                        </div>
+                        <div class="space"></div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon">
+                            <div class="image"><i class="fa fa-desktop"></i></div>
+                            <div class="info">
+                                <h3 class="title">ALL PAYMENT DETAILS</h3>
+                                <p>
+                                    Making Payment in Simple steps , so you can focus on what's important to you.
+                                </p>
+                                <div class="more">
+                                    <a href="#" [routerLink]="['/AllPaymentDetails']" title="Title Link">
+                                        Read More <i class="fa fa-angle-double-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space"></div>
+                    </div>
+                </div>
+                <!-- /Boxes de Acoes -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

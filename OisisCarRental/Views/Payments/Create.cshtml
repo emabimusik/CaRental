@@ -1,0 +1,66 @@
+﻿
+@model  OisisCarRental.ViewModel.PaymentViewModel
+<h1></h1>
+<div class="panel panel-default">
+    <div class="panel-heading">Create Payment</div>
+    <div class="panel-body">
+      @using (Html.BeginForm("Create","Payments", FormMethod.Post))
+      {
+            <div class="row">
+
+                <hr />
+
+
+                <div class="col-md-4">
+
+                    @Html.LabelFor(model => model.Payment.PayMetId, new { @class = "control-label col-lg-4" })
+                    @Html.DropDownListFor(model => model.Payment.PayMetId, new SelectList(Model.Paymethods, "Id", "Name"),
+                   "Select PayMethod", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Payment.PayMetId, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="col-md-4">
+                    @Html.LabelFor(model => model.Payment.Amount, new { @class = "control-label col-lg-4" })
+                    @Html.TextBoxFor(model => model.Payment.Amount, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Payment.Amount, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-4">
+
+                    @Html.LabelFor(model => model.Payment.PayedOn, new { @class = "control-label col-lg-4" })
+                    @Html.TextBoxFor(model => model.Payment.PayedOn, new { @class = "form-control", placeholder = ViewBag.date })
+                    @Html.ValidationMessageFor(model => model.Payment.PayedOn, "", new { @class = "text-danger" })
+                </div>
+            </div>
+       
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.LabelFor(model => model.Payment.PayStaId, new { @class = "control-label col-lg-4" })
+                    @Html.DropDownListFor(model => model.Payment.PayStaId, new SelectList(Model.PayStatuses, "Id", "Name")
+                        , "Select Status", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Payment.PayStaId, "", new { @class = "text-danger" })
+
+                </div>
+
+
+
+               
+                
+
+            </div>
+
+
+                <div class="row">
+                    <div style="margin-top:10px;" class="col-md-4">
+                        <button type="submit" class="btn btn-success">Pay</button>
+                    </div>
+                </div>
+        }
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

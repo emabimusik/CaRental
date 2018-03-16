@@ -1,0 +1,103 @@
+﻿@model  OisisCarRental.ViewModel.CarsViewModel
+   <h1></h1>
+<div class="panel panel-default">
+    <div class="panel-heading btn-info" >Create Car</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Create", "Cars", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+        {
+            <div class="row">
+                
+                <hr />
+              
+               
+                <div class="col-md-4">
+
+                    @Html.LabelFor(model=>model.Car.CarBrandId, new { @class = "control-label col-lg-4" })
+                    @Html.DropDownListFor(model =>model.Car.CarBrandId, new SelectList(Model.CarBrands,"Id","Name"),
+                   "Select Brand",new { @class = "form-control" })             
+                    @Html.ValidationMessageFor(model => model.Car.CarBrandId, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="col-md-4">
+                    @Html.LabelFor(model => model.Car.Model_Name, new { @class = "control-label col-lg-4" })
+                    @Html.TextBoxFor(model => model.Car.Model_Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Car.Model_Name, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-4">
+
+                    @Html.LabelFor(model => model.Car.Color, new { @class = "control-label col-lg-4" })
+                    @Html.TextBoxFor(model => model.Car.Color, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Car.Color, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    @Html.LabelFor(model => model.Car.CarPhoto, new { @class = "control-label col-lg-4" })
+                    <div class="col-lg-10">
+                     <input type="file" name="carPhoto" id="fileUpload" accept=".png,.jpg,.jpeg,.gif,tif,.svg",new {@class = "form-control" }/>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Car.CarPhoto, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-4">
+
+                    @Html.LabelFor(model => model.Car.Number_Seat, new { @class = "control-label col-lg-4" })
+                    @Html.TextBoxFor(model => model.Car.Number_Seat, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Car.Number_Seat, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="col-md-4">
+                    @Html.LabelFor(model => model.Car.Price, new { @class = "control-label col-lg-4" })
+                    @Html.TextBoxFor(model => model.Car.Price, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Car.Price, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                        @Html.LabelFor(model => model.Car.FuelTypeId, new { @class = "control-label col-lg-4" })
+                        @Html.DropDownListFor(model => model.Car.FuelTypeId, new SelectList(Model.FuelTypes, "Id", "Name")
+                        ,"Select FuelType", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Car.FuelTypeId, "", new { @class = "text-danger" })
+
+                </div>
+
+                
+
+                <div class="col-md-4">
+                    @Html.LabelFor(model => model.Car.Location, new { @class = "control-label col-lg-4" })
+                    @Html.TextBoxFor(model => model.Car.Location, new { @class = "form-control", placeholder = "Your Location" })
+                    @Html.ValidationMessageFor(model => model.Car.Location, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-4">
+                        @Html.LabelFor(model => model.Car.CarTypeId, new { @class = "control-label col-lg-4" })
+                        @Html.DropDownListFor(model => model.Car.CarTypeId, new SelectList(Model.CarTypes, "Id", "Name"),
+                        "Select CarType",new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Car.CarTypeId, "", new { @class = "text-danger" })
+
+                 </div>
+               
+                </div>
+
+
+                <div class="row">
+                    <div style="margin-top:10px;" class="col-md-4">
+                        <button type="submit"  class="btn btn-success">Create Car</button>
+                    </div>
+                </div>
+        }
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+ 
+}

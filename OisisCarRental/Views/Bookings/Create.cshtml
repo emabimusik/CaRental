@@ -1,0 +1,115 @@
+﻿@model  OisisCarRental.ViewModel.ZipBokingViewModel
+
+<h2>Booking</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">Booking</div>
+    <div class="panel-body">
+
+
+        @using (Html.BeginForm("Create", "Bookings", FormMethod.Post))
+        {
+            <div class="row">
+              
+                <div class="col-md-6">
+
+                    @Html.LabelFor(model => model.Booking.Name, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.Booking.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Booking.Name, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Booking.D_address, new { @class = "control-label "  })
+                    @Html.TextBoxFor(model => model.Booking.D_address, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Booking.D_address, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Booking.Address, new { @class = "control-label " })
+                    @Html.TextBoxFor(model => model.Booking.Address, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Booking.Address, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Booking.S_address, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.Booking.S_address, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Booking.S_address, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Booking.Email_Bk, new { @class = "control-label " })
+                    @Html.TextBoxFor(model => model.Booking.Email_Bk, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Booking.Email_Bk, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Booking.FromDate, new { @class = "control-label " })
+                    @Html.TextBoxFor(model => model.Booking.FromDate, new { @class = "form-control datepicker" })
+                    @Html.ValidationMessageFor(model => model.Booking.FromDate, "", new { @class = "text-danger" })
+
+                </div>
+    
+            
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Booking.Zipcode.Commune, new { @class = "control-label" })
+                    @Html.DropDownListFor(model => model.Booking.ZipId, new SelectList(Model.ZipCodes, "Id", "PostNumber"),
+                   "Select PostCode", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Booking.ZipId, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Booking.ToDate, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.Booking.ToDate, new { @class = "form-control datepicker" })
+                    @Html.ValidationMessageFor(model => model.Booking.ToDate, "", new { @class = "text-danger" })
+
+                </div>
+
+
+          </div>
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Booking.Contact_No, new { @class = "control-label " })
+                    @Html.TextBoxFor(model => model.Booking.Contact_No, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Booking.Contact_No, "", new { @class = "text-danger" })
+                </div>
+
+
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Booking.Amount, new { @class = "control-label " })
+                    @Html.TextBoxFor(model => model.Booking.Amount, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Booking.Amount, "", new { @class = "text-danger" })
+                </div>
+
+
+                <div class="col-md-6">
+                    <label class = "control-label ">Kommune</label>
+                    @Html.DropDownListFor(model => model.Booking.ZipId, new SelectList(Model.ZipCodes, "Id", "Commune"),
+                   "Select Kommune", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Booking.ZipId, "", new { @class = "text-danger" })
+                </div>
+               
+            </div>
+
+
+            <div class="row">
+
+                <div style="margin-top:10px;" class="col-md-4">
+                    <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Book Ride</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+   <script type="text/javascript">
+       
+       $(function () {
+           $('.datepicker').datepicker({
+               pickTime: false
+           });
+       });
+
+    </script>
+   
+    }

@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<h1><i class="glyphicon glyphicon-registration-mark"></i></h1>
+
+
+<div class="row">
+
+        <div class="col-lg-8">
+
+    <div class="panel panel-default">
+        <div class="panel-heading"><i class="glyphicon glyphicon-envelope"></i>Conctac Us By Email</div>
+        <div class="panel-body">
+            @using (Html.BeginForm("Contact", "Contact", "Home"))
+            {
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label class="control-label col-lg-4">Name</label>
+                        <input type="text" name="myname" placeholder="Your Name" class="form-control " />
+
+                    </div>
+                    <div class="col-lg-6">
+                        <label class="control-label col-lg-4">Email</label>
+                        <input type="email" name="myname" placeholder="Your Name" class="form-control" />
+
+                    </div>
+
+                    <div class=" col-lg-6">
+                        <label class="control-label col-lg-4">Name</label>
+                        <input type="text" name="myname" placeholder="Your Name" class="form-control " />
+
+                    </div>
+                    <div class=" col-lg-6">
+                        <label class="control-label col-lg-4">Email</label>
+                        <input type="email" name="myname" placeholder="Your Name" class="form-control" />
+
+                    </div>
+
+                    <div class=" col-lg-6">
+                        <label class="control-label col-lg-4">Message</label>
+                        <textarea class="form-control">
+                         </textarea>
+
+
+                    </div>
+                  
+
+
+                </div>
+                <div class="row">
+
+                    <div style="margin-top:10px;" class="col-md-4">
+                        <button type="submit" class="btn btn-success">Send</button>
+                    </div>
+                </div>
+
+
+            }
+                </div>
+            </div>
+        </div>
+   
+            <div class="col-lg-2">
+              
+                <div class="panel panel-default">
+                     <div class="panel-heading"><i class="glyphicon glyphicon-phone"></i>Conctac Us By Phone</div>
+                    <div class="panel-body">
+                        <span class="btn btn-warning">00459867787</span>
+                    </div>
+                </div>
+
+            </div>
+               
+</div>
